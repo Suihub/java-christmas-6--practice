@@ -33,14 +33,14 @@ public class Menus {
                 .toList();
     }
 
-    public long calculateMainMenuNum() {
-        return menus.keySet().stream()
+    public int calculateMainMenuNum() {
+        return (int) menus.keySet().stream()
                 .filter(key -> key.getMenuCode() == 2)
                 .count();
     }
 
-    public long calculateDessertMenuNum() {
-        return menus.keySet().stream()
+    public int calculateDessertMenuNum() {
+        return (int) menus.keySet().stream()
                 .filter(key -> key.getMenuCode() == 3)
                 .count();
     }
