@@ -1,5 +1,8 @@
 package christmas.domain.menu;
 
+import java.util.Arrays;
+import java.util.Optional;
+
 public enum Menu {
     MUSHROOM_SOUP("양송이수프", 6000, 1),
     TAPAS("타파스", 5500, 1),
@@ -25,6 +28,14 @@ public enum Menu {
         this.menuCode = menuCode;
     }
 
+    public static Menu orderMenu(String input) {
+        Optional<Menu> result = Arrays.stream(Menu.values())
+                .filter(menu -> input.equals(menu.name))
+                .findAny();
+
+        return result.orElse(NOT_EXIST);
+    }
+
     public String getName() {
         return name;
     }
@@ -35,14 +46,5 @@ public enum Menu {
 
     public int getMenuCode() {
         return menuCode;
-    }
-
-    public Menu order(String name) {
-        for (Menu menu : Menu.values()) {
-            if (menu.getName().equals(name)) {
-                return menu;
-            }
-        }
-        return NOT_EXIST;
     }
 }

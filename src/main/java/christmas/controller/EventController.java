@@ -1,8 +1,11 @@
 package christmas.controller;
 
 import christmas.domain.calendar.EventCalendar;
+import christmas.domain.menu.Menus;
 import christmas.view.InputView;
 import christmas.view.OutputView;
+
+import java.util.List;
 
 public class EventController {
     private final InputView input;
@@ -34,9 +37,12 @@ public class EventController {
     }
 
     private void createMenus(EventCalendar eventDate) {
+        Menus menus;
+
         while (true) {
             try {
-                String order = input.readOrder();
+                List<String> order = input.readOrder();
+                menus = new Menus(order);
                 break;
             } catch (IllegalArgumentException exception) {
                 System.out.println(exception.getMessage());
