@@ -27,7 +27,7 @@ public class Menus {
                 .sum();
     }
 
-    public List<String> printOrderList() {
+    public List<String> writeOrderList() {
         return menus.keySet().stream()
                 .map(key -> String.format("%s %d개", key.getName(), menus.get(key)))
                 .toList();
