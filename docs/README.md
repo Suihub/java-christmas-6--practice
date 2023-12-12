@@ -111,7 +111,7 @@
 - [ ] 입력 기능을 담당한다.
 
 ### OutputView
-- [ ] 출력 기능을 담당한다.
+- [x] 첫 플래너 시작을 출력한다.
 
 ## Exception
 ### MenuValidate

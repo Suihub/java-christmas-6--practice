@@ -13,6 +13,6 @@ public class EventController {
     }
 
     public void start() {
-
+        output.announce();
     }
 }
