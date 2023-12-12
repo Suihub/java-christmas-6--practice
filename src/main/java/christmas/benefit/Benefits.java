@@ -10,6 +10,8 @@ import christmas.domain.menu.Menus;
 import java.util.ArrayList;
 import java.util.List;
 
+import static christmas.benefit.EventBadge.*;
+
 public class Benefits {
     private final List<EventBenefit> benefits;
 
@@ -33,6 +35,31 @@ public class Benefits {
         }
 
         return new Benefits(orderAmount, calendar, menus);
+    }
+
+    public int calculateTotalBenefitAmount() {
+        return benefits.stream()
+                .mapToInt(EventBenefit::getBenefitAmount)
+                .sum();
+    }
+
+    public int calculateTotalDiscountAmount() {
+        int result = calculateTotalBenefitAmount();
+
+        if (benefits.contains(GiveawayBenefit.getInstance())) {
+            return result - 25_000;
+        }
+        return result;
+    }
+
+    public List<String> writeBenefitHistoryList() {
+        return benefits.stream()
+                .map(EventBenefit::writeBenefitHistory)
+                .toList();
+    }
+
+    public EventBadge resultEventBadge() {
+        return resultBadge(calculateTotalBenefitAmount());
     }
 
     private void initChristmasAndSpecialDiscount(EventCalendar calendar) {
