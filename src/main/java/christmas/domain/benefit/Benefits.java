@@ -58,8 +58,15 @@ public class Benefits {
                 .toList();
     }
 
-    public EventBadge resultEventBadge() {
-        return resultBadge(calculateTotalBenefitAmount());
+    public String writeGiveawayMenu() {
+        if (benefits.contains(GiveawayBenefit.getInstance())) {
+            return "샴페인 1개";
+        }
+        return "없음";
+    }
+
+    public String resultEventBadge() {
+        return resultBadge(calculateTotalBenefitAmount()).getStatus();
     }
 
     private void initChristmasAndSpecialDiscount(EventCalendar calendar) {

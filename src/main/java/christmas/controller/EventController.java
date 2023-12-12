@@ -1,5 +1,7 @@
 package christmas.controller;
 
+import christmas.domain.Order;
+import christmas.domain.benefit.Benefits;
 import christmas.domain.calendar.EventCalendar;
 import christmas.domain.menu.Menus;
 import christmas.view.InputView;
@@ -48,5 +50,11 @@ public class EventController {
                 System.out.println(exception.getMessage());
             }
         }
+        createOrder(eventDate, menus);
+    }
+
+    private void createOrder(EventCalendar eventDate, Menus menus) {
+        Order order = new Order(eventDate, menus);
+        Benefits benefits = order.resultBenefit();
     }
 }
