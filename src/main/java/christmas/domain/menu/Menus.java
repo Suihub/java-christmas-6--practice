@@ -34,15 +34,17 @@ public class Menus {
     }
 
     public int calculateMainMenuNum() {
-        return (int) menus.keySet().stream()
+        return menus.keySet().stream()
                 .filter(key -> key.getMenuCode() == 2)
-                .count();
+                .mapToInt(key -> menus.get(key))
+                .sum();
     }
 
     public int calculateDessertMenuNum() {
-        return (int) menus.keySet().stream()
+        return menus.keySet().stream()
                 .filter(key -> key.getMenuCode() == 3)
-                .count();
+                .mapToInt(key -> menus.get(key))
+                .sum();
     }
 
     private void notExistMenuValidate() {
