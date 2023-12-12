@@ -79,31 +79,31 @@
 - [x] 혜택 가격을 반환한다.
 
 #### GiveawayBenefit
-- [ ] 증정 혜택 구현
+- [x] 증정 혜택 구현
 
 #### UnappliedBenefit
-- [ ] 혜택 미적용 구현
+- [x] 혜택 미적용 구현
 
 #### 열거형 EventBadge
-- [ ] 이름을 가진다.
-- [ ] 주어진 혜택 금액에 따라 해당 열거형을 반환한다.
+- [x] 이름을 가진다.
+- [x] 주어진 혜택 금액에 따라 해당 열거형을 반환한다.
 
 #### 패키지 discount
 ##### ChristmasDiscount
-- [ ] 크리스마스 디데이 할인 구현
+- [x] 크리스마스 디데이 할인 구현
 
 ##### WeekdayDisocunt
-- [ ] 평일 할인 구현
+- [x] 평일 할인 구현
 
 ##### WeekendDiscount
-- [ ] 주말 할인 구현
+- [x] 주말 할인 구현
 
 ##### SpecialDiscount
-- [ ] 특별 할인 구현
+- [x] 특별 할인 구현
 
 ## Controller
 ### EventController
-- [ ] 중계 역할을 담당한다.
+- [x] 중계 역할을 담당한다.
 
 ## View
 ### InputView
