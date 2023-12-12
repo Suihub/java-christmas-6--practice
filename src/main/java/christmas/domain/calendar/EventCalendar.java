@@ -15,6 +15,28 @@ public class EventCalendar {
         return date.getDayOfMonth();
     }
 
+    public boolean judgeChristmasDiscount() {
+        return date.isBefore(LocalDate.of(2023, 12, 26));
+    }
+
+    public boolean judgeWeekdayDiscount() {
+        int value = date.getDayOfWeek().getValue();
+
+        return value != 5 && value != 6;
+    }
+
+    public boolean judgeWeekendDiscount() {
+        int value = date.getDayOfWeek().getValue();
+
+        return value == 5 || value == 6;
+    }
+
+    public boolean judgeSpecialDiscount() {
+        int value = date.getDayOfWeek().getValue();
+
+        return value == 7 || date.getDayOfMonth() == 25;
+    }
+
     private void numberValidate(String input) {
         try {
             Integer.parseInt(input);
