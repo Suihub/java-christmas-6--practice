@@ -14,5 +14,14 @@ public class EventController {
 
     public void start() {
         output.announce();
+
+        while (true) {
+            try {
+                String date = input.readDate();
+                break;
+            } catch (IllegalArgumentException exception) {
+                System.out.println(exception.getMessage());
+            }
+        }
     }
 }
