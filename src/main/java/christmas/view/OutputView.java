@@ -50,7 +50,7 @@ public class OutputView {
     }
 
     private void printBenefitAmount(EventDto eventDto) {
-        System.out.println("<총혜택 내역>");
+        System.out.println("<총혜택 금액>");
         System.out.printf("%s원%n%n", standard.format(eventDto.getTotalBenefitAmount()));
     }
 
