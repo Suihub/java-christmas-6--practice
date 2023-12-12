@@ -11,6 +11,10 @@ public class EventCalendar {
         this.date = LocalDate.of(2023, 12, Integer.parseInt(input));
     }
 
+    public int getEventDate() {
+        return date.getDayOfMonth();
+    }
+
     private void numberValidate(String input) {
         try {
             Integer.parseInt(input);
