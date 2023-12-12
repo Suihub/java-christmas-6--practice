@@ -33,34 +33,34 @@ public class OutputView {
     }
 
     private void printBeforeOrderAmount(EventDto eventDto) {
-        System.out.println("할인 전 총주문 금액");
+        System.out.println("<할인 전 총주문 금액>");
         System.out.printf("%s원%n%n", standard.format(eventDto.getOrderAmount()));
     }
 
     private void printGiveawayMenu(EventDto eventDto) {
-        System.out.println("증정 메뉴");
+        System.out.println("<증정 메뉴>");
         System.out.println(eventDto.getResultGiveaway());
         System.out.println();
     }
 
     private void printBenefitHistory(EventDto eventDto) {
-        System.out.println("혜택 내역");
+        System.out.println("<혜택 내역>");
         eventDto.getBenefitList().forEach(System.out::println);
         System.out.println();
     }
 
     private void printBenefitAmount(EventDto eventDto) {
-        System.out.println("총혜택 내역");
+        System.out.println("<총혜택 내역>");
         System.out.printf("%s원%n%n", standard.format(eventDto.getTotalBenefitAmount()));
     }
 
     private void printAfterOrderAmount(EventDto eventDto) {
-        System.out.println("할인 후 예상 결제 금액");
+        System.out.println("<할인 후 예상 결제 금액>");
         System.out.printf("%s원%n%n", standard.format(eventDto.getAfterOrderAmount()));
     }
 
     private void printEventBadgeStatus(EventDto eventDto) {
-        System.out.println("12월 이벤트 배지");
+        System.out.println("<12월 이벤트 배지>");
         System.out.println(eventDto.getBadgeStatus());
     }
 }
