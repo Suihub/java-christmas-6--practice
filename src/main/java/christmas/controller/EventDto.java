@@ -6,6 +6,7 @@ import christmas.domain.benefit.Benefits;
 import java.util.List;
 
 public class EventDto {
+    private final int eventDate;
     private final List<String> orderList;
     private final int orderAmount;
     private final String resultGiveaway;
@@ -15,6 +16,7 @@ public class EventDto {
     private final String badgeStatus;
 
     public EventDto(Order order, Benefits benefits) {
+        this.eventDate = order.getEventDate();
         this.orderList = order.resultTotalOrderList();
         this.orderAmount = order.resultTotalOrderAmount();
         this.resultGiveaway = benefits.writeGiveawayMenu();
@@ -22,6 +24,10 @@ public class EventDto {
         this.totalBenefitAmount = benefits.calculateTotalBenefitAmount() * -1;
         this.afterOrderAmount = order.resultTotalOrderAmount() - benefits.calculateTotalDiscountAmount();
         this.badgeStatus = benefits.resultEventBadge();
+    }
+
+    public int getEventDate() {
+        return eventDate;
     }
 
     public List<String> getOrderList() {

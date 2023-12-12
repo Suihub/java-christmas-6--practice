@@ -56,5 +56,12 @@ public class EventController {
     private void createOrder(EventCalendar eventDate, Menus menus) {
         Order order = new Order(eventDate, menus);
         Benefits benefits = order.resultBenefit();
+
+        EventDto eventDto = new EventDto(order, benefits);
+        resultEventPlan(eventDto);
+    }
+
+    private void resultEventPlan(EventDto eventDto) {
+        output.printResult(eventDto);
     }
 }
