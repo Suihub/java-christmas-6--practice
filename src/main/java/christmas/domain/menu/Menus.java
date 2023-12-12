@@ -36,14 +36,14 @@ public class Menus {
     public int calculateMainMenuNum() {
         return menus.keySet().stream()
                 .filter(key -> key.getMenuCode() == 2)
-                .mapToInt(key -> menus.get(key))
+                .mapToInt(menus::get)
                 .sum();
     }
 
     public int calculateDessertMenuNum() {
         return menus.keySet().stream()
                 .filter(key -> key.getMenuCode() == 3)
-                .mapToInt(key -> menus.get(key))
+                .mapToInt(menus::get)
                 .sum();
     }
 
