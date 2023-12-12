@@ -1,16 +1,16 @@
-package christmas.benefit;
+package christmas.domain.benefit;
 
-import christmas.benefit.discount.ChristmasDiscount;
-import christmas.benefit.discount.SpecialDiscount;
-import christmas.benefit.discount.WeekdayDiscount;
-import christmas.benefit.discount.WeekendDiscount;
+import christmas.domain.benefit.discount.ChristmasDiscount;
+import christmas.domain.benefit.discount.SpecialDiscount;
+import christmas.domain.benefit.discount.WeekdayDiscount;
+import christmas.domain.benefit.discount.WeekendDiscount;
 import christmas.domain.calendar.EventCalendar;
 import christmas.domain.menu.Menus;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static christmas.benefit.EventBadge.*;
+import static christmas.domain.benefit.EventBadge.*;
 
 public class Benefits {
     private final List<EventBenefit> benefits;

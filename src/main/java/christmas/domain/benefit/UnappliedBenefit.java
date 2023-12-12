@@ -1,4 +1,4 @@
-package christmas.benefit;
+package christmas.domain.benefit;
 
 public class UnappliedBenefit implements EventBenefit{
     private final String name;

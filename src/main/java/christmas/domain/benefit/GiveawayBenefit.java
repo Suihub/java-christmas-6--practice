@@ -1,4 +1,4 @@
-package christmas.benefit;
+package christmas.domain.benefit;
 
 import java.text.DecimalFormat;
 

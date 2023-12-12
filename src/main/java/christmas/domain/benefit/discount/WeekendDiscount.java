@@ -1,16 +1,16 @@
-package christmas.benefit.discount;
+package christmas.domain.benefit.discount;
 
-import christmas.benefit.EventBenefit;
+import christmas.domain.benefit.EventBenefit;
 
 import java.text.DecimalFormat;
 
-public class ChristmasDiscount implements EventBenefit {
+public class WeekendDiscount implements EventBenefit {
     private final String name;
     private final int amount;
 
-    public ChristmasDiscount(int date) {
-        this.name = "크리스마스 디데이 할인";
-        this.amount = 1000 + ((date - 1) * 100);
+    public WeekendDiscount(int num) {
+        this.name = "주말 할인";
+        this.amount = 2023 * num;
     }
 
     @Override
