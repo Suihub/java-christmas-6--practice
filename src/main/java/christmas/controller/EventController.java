@@ -1,5 +1,6 @@
 package christmas.controller;
 
+import christmas.domain.calendar.EventCalendar;
 import christmas.view.InputView;
 import christmas.view.OutputView;
 
@@ -18,6 +19,7 @@ public class EventController {
         while (true) {
             try {
                 String date = input.readDate();
+                EventCalendar eventDate = new EventCalendar(date);
                 break;
             } catch (IllegalArgumentException exception) {
                 System.out.println(exception.getMessage());
