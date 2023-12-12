@@ -21,6 +21,30 @@ public class Menus {
         menuNumMaxValidate();
     }
 
+    public int calculateOrderAmount() {
+        return menus.keySet().stream()
+                .mapToInt(key -> key.getPrice() * menus.get(key))
+                .sum();
+    }
+
+    public List<String> printOrderList() {
+        return menus.keySet().stream()
+                .map(key -> String.format("%s %d개", key.getName(), menus.get(key)))
+                .toList();
+    }
+
+    public long calculateMainMenuNum() {
+        return menus.keySet().stream()
+                .filter(key -> key.getMenuCode() == 2)
+                .count();
+    }
+
+    public long calculateDessertMenuNum() {
+        return menus.keySet().stream()
+                .filter(key -> key.getMenuCode() == 3)
+                .count();
+    }
+
     private void notExistMenuValidate() {
         Optional<Menu> result = menus.keySet().stream()
                 .filter(menu -> menu.getMenuCode() == 0)
