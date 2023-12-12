@@ -15,11 +15,28 @@ public class EventController {
 
     public void start() {
         output.announce();
+        createEventCalendar();
+    }
+
+    private void createEventCalendar() {
+        EventCalendar eventDate;
 
         while (true) {
             try {
                 String date = input.readDate();
-                EventCalendar eventDate = new EventCalendar(date);
+                eventDate = new EventCalendar(date);
+                break;
+            } catch (IllegalArgumentException exception) {
+                System.out.println(exception.getMessage());
+            }
+        }
+        createMenus(eventDate);
+    }
+
+    private void createMenus(EventCalendar eventDate) {
+        while (true) {
+            try {
+                String order = input.readOrder();
                 break;
             } catch (IllegalArgumentException exception) {
                 System.out.println(exception.getMessage());
